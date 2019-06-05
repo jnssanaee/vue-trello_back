@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    메인입니다.
   </div>
 </template>
 

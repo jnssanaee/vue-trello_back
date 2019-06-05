@@ -4,6 +4,25 @@
 
 <br>
 
+
+## 디렉토리 및 역할
+
+```sh
+├─src
+│  ├─router
+│  │      index.js
+│  │      02-문서.md
+│  └─images
+│          이미지
+│          이미지
+```
+
+<br>
+
+
+## vue
+> vue-router는 기본이 해시 모드이다. 해시를 제거하기 위해선 history모드로 선언!
+
 ## npm  
 
 > --save : --production 빌드 시 해당 플러그인 포함  
