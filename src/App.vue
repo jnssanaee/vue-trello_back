@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    메인입니다.
+    <Navbar />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld'
-
+import Navbar from './components/Navbar.vue'
 export default {
   name: 'App',
-  components: {
-    //HelloWorld
-  }
+  components: {Navbar}
 }
 </script>
 

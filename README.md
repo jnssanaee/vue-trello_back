@@ -4,7 +4,6 @@
 
 <br>
 
-
 ## 디렉토리 및 역할
 
 ```sh
@@ -16,6 +15,7 @@
 │          이미지
 │          이미지
 │─App.vue : 루트 컴포넌트
+│─main.js : 엔트리 포인트 (진입점)
 ```
 
 <br>
@@ -23,16 +23,17 @@
 
 ## vue
 > vue-router는 기본이 해시 모드이다. 해시를 제거하기 위해선 history모드로 선언!
+> template태그 내 마크업 시 div를 한번 감싸줘야 한다.
 
-## npm  
+## npm
 
-> --save : --production 빌드 시 해당 플러그인 포함  
+> --save : --production 빌드 시 해당 플러그인 포함
 > --save-dev : --production 빌드 시 해당 플러그인 포함X
 
 <br>
 
 ## git
-> 브랜치 생성 : git branch &lt;branch name&gt;  
+> 브랜치 생성 : git branch &lt;branch name&gt;
 > 브랜치 이동 : git checkout &lt;branch&gt;
 
 <br>
