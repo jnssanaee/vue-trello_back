@@ -10,11 +10,12 @@
 ```sh
 ├─src
 │  ├─router
-│  │      index.js
+│  │      index.js : 라우팅 관련 로직
 │  │      02-문서.md
 │  └─images
 │          이미지
 │          이미지
+│─App.vue : 루트 컴포넌트
 ```
 
 <br>

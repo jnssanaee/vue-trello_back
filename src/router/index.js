@@ -1,21 +1,16 @@
 
 import Vue from 'vue'
-import App from '../App'
 import VueRouter from 'vue-router'
+import Home from '../components/Home.vue'
+import Home from '../components/Login.vue'
+import Home from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
-
-const Login = {
-  template: '<div>로그인</div>'
-}
-const NotFound = {
-  template: '<div>NotFound</div>'
-}
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: App },
+    { path: '/', component: Home },
     { path: '/login', component: Login },
     { path: '*', component: NotFound }
   ] 
