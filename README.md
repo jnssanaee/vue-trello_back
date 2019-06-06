@@ -24,6 +24,7 @@
 ## vue
 > vue-router는 기본이 해시 모드이다. 해시를 제거하기 위해선 history모드로 선언!
 > template태그 내 마크업 시 div를 한번 감싸줘야 한다.
+> : (콜론)으로 선언 시  변수로 받을 수 있다. ex) { path: '/b/:bid', component: Board }
 
 ## npm
 
