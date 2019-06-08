@@ -40,6 +40,8 @@
 >> 선언적 방식 &lt;router-link :to="..."&gt;  
 >> 프로그래밍 방식 router.push(...)
 
+> computed 속성은 종속 대상을 따라 저장(캐싱)된다. 이 속성은 종속된 대상이 변경될 때만 함수를 실행한다.  
+
 ## npm
 > --save : --production 빌드 시 해당 플러그인 포함
 
