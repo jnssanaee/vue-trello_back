@@ -24,45 +24,15 @@ export const setAuthInHeader = token => {
   axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : null;
 }
 
+const {token} = localStorage
+if (token) setAuthInHeader(token)
+
 export const board = {
-  fetch(id) {
-    return id ? request('get', `/boards/${id}`) : request('get', '/boards') 
+  fetch() {
+    return request('get', '/boards') 
   },
   create(title) {
     return request('post', '/boards', {title})
-  },
-  update(id, payload) {
-    return request('put', `/boards/${id}`, payload)
-  },
-  destroy(id) {
-    return request('delete', `/boards/${id}`)
-  }
-}
-
-export const list = {
-  create(payload) {
-    return request('post', '/lists', payload)
-  },
-  update(id, payload) {
-    return request('put', `/lists/${id}`, payload)
-  },
-  destroy(id) {
-    return request('delete', `/lists/${id}`)
-  },
-}
-
-export const card = {
-  fetch(id) {
-    return request('get', `/cards/${id}`)
-  },
-  create(title, listId, pos) {
-    return request('post', '/cards', {title, listId, pos})
-  },
-  update(id, payload) {
-    return request('put', `/cards/${id}`, payload)
-  },
-  destroy(id) {
-    return request('delete', `/cards/${id}`)
   }
 }
 

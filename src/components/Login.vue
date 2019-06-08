@@ -34,7 +34,7 @@ export default {
     }
   },
   created() {
-    this.returnPath = this.$route.query.returnPath || '/'
+    this.rPath = this.$route.query.returnPath || '/'
   },
   methods: {
     onSubmit() {
@@ -45,7 +45,7 @@ export default {
           this.$router.push(this.rPath)
         })
         .catch(err => {
-          console.log(err)
+          this.error = err.data.error
         })
     }
   }
