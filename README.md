@@ -15,7 +15,7 @@
 │          이미지
 │          이미지
 │─App.vue : 루트 컴포넌트
-│─components 
+│─components
 │  ├─Board.vue : 보드
 │  ├─Card.vue : 상세 레이어
 │  ├─Home.vue : 메인
@@ -30,17 +30,23 @@
 
 
 ## vue
-> vue-router는 기본이 해시 모드이다. 해시를 제거하기 위해선 history모드로 선언!  
+> vue-router는 기본이 해시 모드이다. 해시를 제거하기 위해선 history모드로 선언!
 
-> template태그 내 마크업 시 div를 한번 감싸줘야 한다.  
+> template태그 내 마크업 시 div를 한번 감싸줘야 한다.
 
-> : (콜론)으로 선언 시  변수로 받을 수 있다. ex) { path: '/b/:bid', component: Board }  
+> : (콜론)으로 선언 시  변수로 받을 수 있다. ex) { path: '/b/:bid', component: Board }
 
-> router 프로그래밍 방식 네비게이션   
->> 선언적 방식 &lt;router-link :to="..."&gt;  
+> router 프로그래밍 방식 네비게이션
+>> 선언적 방식 &lt;router-link :to="..."&gt;
 >> 프로그래밍 방식 router.push(...)
 
-> computed 속성은 종속 대상을 따라 저장(캐싱)된다. 이 속성은 종속된 대상이 변경될 때만 함수를 실행한다.  
+> router.replace(location) : 경로 이동
+
+> computed 속성은 종속 대상을 따라 저장(캐싱)된다. 이 속성은 종속된 대상이 변경될 때만 함수를 실행한다.
+
+## vue 라이프사이클
+> Create 훅 : 컴포넌트가 DOM에 추가 되기 전이기 때문에, DOM에 접근하거나 this.$el을 사용할 수 없다.
+>> created 훅 : data, computed, methods, watch 등과 같은 옵션 설정이 완료된 시점
 
 ## npm
 > --save : --production 빌드 시 해당 플러그인 포함
