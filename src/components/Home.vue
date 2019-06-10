@@ -9,16 +9,17 @@
         </router-link>
       </div>
       <div class="board-item board-item-new">
-        <a class="new-board-btn" href="" @click.prevent="addBoard">
+        <a class="new-board-btn" href="" @click.prevent="SET_IS_ADD_BOARD(true)">
           Create new board...
         </a>
       </div>
     </div>
-    <Addboard v-if="isAddBoard" @close="isAddBoard=false" @submit="onAddBoard"></Addboard> <!-- close가 발생하면 isAddBoard를 false로 변경한다. -->
+    <AddBoard v-if="isAddBoard" />
   </div>
 </template>
 
 <script>
+import {mapState, mapMutations, mapActions} from 'vuex'
 import {board} from '../api'
 import AddBoard from './Addboard.vue'
 
@@ -29,10 +30,14 @@ export default {
   data() {
     return {
       loading: false,
-      boards: [],
-      error: '',
-      isAddBoard: false
+      error: ''
     }
+  },
+  computed: {
+    ...mapState({  // state를 편하게 코딩하게 해주는 mapState 헬퍼, ES6의 ... 해체문법을 사용한 이유는 확장성 때문!
+      isAddBoard: 'isAddBoard', // 매핑 된 계산된 속성의 이름이 하위 트리 이름과 같을 때 문자열 배열을 mapState에 전달할 수 있다. // this.isAddBoard를 store.state.isAddBoard에 매핑한다.
+      boards: 'boards'
+    })
   },
   created() {
     this.fetchData()
@@ -43,22 +48,17 @@ export default {
     })
   },
   methods: {
+    ...mapMutations([ // mapMutaions 헬퍼
+      'SET_IS_ADD_BOARD' // this.SET_IS_ADD_BOARD()를 this.$store.commit('SET_IS_ADD_BOARD')에 매핑한다.
+    ]),
+    ...mapActions([
+      'FETCH_BOARDS'
+    ]),
     fetchData() {
       this.loading = true
-      board.fetch()
-        .then(data => {
-          this.boards = data.list
-        })
-        .finally(_=> {
-          this.loading = false
-        })
-    },
-    addBoard() {
-      this.isAddBoard = true
-    },
-    onAddBoard(title) {
-      board.create(title)
-        .then(() => this.fetchData())
+      this.FETCH_BOARDS().finally(_=> {
+        this.loading = false
+      })
     }
   }
 }

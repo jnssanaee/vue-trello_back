@@ -11,9 +11,8 @@
 │  ├─router
 │  │      index.js : 라우팅 관련 로직
 │  │      02-문서.md
-│  └─images
-│          이미지
-│          이미지
+│  └─store
+│         index.js : vuex 관련 로직
 │─App.vue : 루트 컴포넌트
 │─components 
 │  ├─AddBoard.vue : (create board 클릭 시) Modal
@@ -44,6 +43,12 @@
 
 > computed 속성은 종속 대상을 따라 저장(캐싱)된다. 이 속성은 종속된 대상이 변경될 때만 함수를 실행한다.  
 
+> 변이 : Vuex 저장소에서 실제로 상태를 변경하는 유일한 방법은 변이하는 것이다. 변이는 무조건 동기적이어야 한다. commit()을 사용한다.  
+
+> 액션 : 비동기를 담당한다. dispatch()를 사용한다.  
+
+<br>
+
 ## npm
 > --save : --production 빌드 시 해당 플러그인 포함
 
@@ -52,9 +57,11 @@
 <br>
 
 ## git
-> 브랜치 생성 : git branch &lt;branch name&gt;
+> 브랜치 생성 : git branch &lt;branch이름&gt;
 
-> 브랜치 이동 : git checkout &lt;branch&gt;
+> 브랜치 이동 : git checkout &lt;branch이름&gt;
+
+> 브랜치 생성 및 이동 : git checkout -b &lt;branch이름&gt;
 
 <br>
 
