@@ -7,24 +7,30 @@
 ## 디렉토리 및 역할
 
 ```sh
-├─src
-│  ├─router
-│  │      index.js : 라우팅 관련 로직
-│  │      02-문서.md
-│  └─store
-│         index.js : vuex 관련 로직
-│─App.vue : 루트 컴포넌트
-│─components 
-│  ├─AddBoard.vue : (create board 클릭 시) Modal
-│  ├─Board.vue : 보드
-│  ├─Card.vue : 상세 레이어
-│  ├─Home.vue : 메인
-│  ├─Login.vue : 로그인
-│  ├─Modal.vue : (board 클릭 시) Modal
-│  ├─Navbar.vue : 상단네비게이션
-│  ├─NotFound.vue : 404 에러
+│─ index.html
+│─ main.js : 엔트리 포인트 (진입점)
+├─ api
+│   │    index.js
+│─ router
+│      index.js : 라우팅 관련 로직
+│─ App.vue : 루트 컴포넌트
+│─ components 
+│   ├─ AddBoard.vue : (create board 클릭 시) Modal
+│   ├─ Board.vue : 보드
+│   ├─ Card.vue : 상세 레이어
+│   ├─ Home.vue : 메인
+│   ├─ Login.vue : 로그인
+│   ├─ Modal.vue : (board 클릭 시) Modal
+│   ├─ Navbar.vue : 상단네비게이션
+│   ├─ NotFound.vue : 404 에러
+│─ store
+│   ├─ index.js : 각 객체들을 모아 store 객체를 만드는 역할
+│   ├─ actions.js : 액션
+│   ├─ getters.js : getter
+│   ├─ mutations.js : 변이
+│   ├─ state.js : 상태
 
-│─main.js : 엔트리 포인트 (진입점)
+
 ```
 
 <br>
@@ -46,6 +52,9 @@
 > 변이 : Vuex 저장소에서 실제로 상태를 변경하는 유일한 방법은 변이하는 것이다. 변이는 무조건 동기적이어야 한다. commit()을 사용한다.  
 
 > 액션 : 비동기를 담당한다. dispatch()를 사용한다.  
+
+> getter는 저장소의 계산된 속성으로 생각하면 된다. getter의 결과는 종속성에 따라 캐쉬되고, 일부 종속성이 변경된 경우만 다시 재계산된다.  
+  getter는 첫번째 인자로 상태를 받는다.
 
 <br>
 
