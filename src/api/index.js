@@ -25,8 +25,8 @@ export const setAuthInHeader = token => {
 }
 
 export const board = {
-  fetch() {
-    return request('get', '/boards') 
+  fetch(id) {
+    return id ? request('get', `/boards/${id}`) : request('get', '/boards') // id가 있는 경우 뒷에 id있는 경로로! (GET board API를 보면 뒤에 id가 있다.)
   },
   create(title) {
     return request('post', '/boards', {title})

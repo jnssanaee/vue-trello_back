@@ -53,9 +53,8 @@ export default {
     ]),
     addBoard() {
       this.SET_IS_ADD_BOARD(false)
-      this.ADD_BOARD({title: this.input}).then(_ => {
-        this.FETCH_BOARDS()
-      })
+      this.ADD_BOARD({title: this.input})
+        .then(({id}) => this.$router.push(`/b/${id}`)) // id을 받아서 리다이렉트 해준다. (보통 인자가 1개일 경우 중괄호를 한다.)
     }
   }
 }
