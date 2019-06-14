@@ -16,9 +16,11 @@
 │─ App.vue : 루트 컴포넌트
 │─ components 
 │   ├─ AddBoard.vue : (create board 클릭 시) Modal
+│   ├─ AddCard.vue : 
 │   ├─ Board.vue : 보드
 │   ├─ Card.vue : 상세 레이어
 │   ├─ Home.vue : 메인
+│   ├─ List.vue : 리스트
 │   ├─ Login.vue : 로그인
 │   ├─ Modal.vue : (board 클릭 시) Modal
 │   ├─ Navbar.vue : 상단네비게이션
